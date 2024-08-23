@@ -1,0 +1,341 @@
+/* إعدادات عامة */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0f172a; /* لون خلفية داكن أسطوري */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* ترويسة */
+header {
+    width: 100%;
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6); /* تدرج ألوان نابض بالحياة */
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+header button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5em;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+}
+
+header button:hover {
+    color: #fbbf24; /* لون تفاعلي جميل */
+}
+
+#moonIcon, #sunIcon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity 0.3s;
+}
+
+#moonIcon {
+    display: none;
+}
+
+#sunIcon {
+    display: inline;
+}
+
+header button.active #moonIcon {
+    display: inline;
+    opacity: 1;
+}
+
+header button.active #sunIcon {
+    display: none;
+    opacity: 0;
+}
+
+/* حاوية المحتوى */
+.container {
+    margin-top: 100px;
+    background-color: #1e293b; /* لون خلفية داكن مع تأثير التدرج */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    color: #3b82f6; /* لون أسطوري */
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 2.2em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    transition: color 0.3s;
+}
+
+/* تنسيق الإدخالات */
+.input-container {
+    margin-bottom: 20px;
+}
+
+.quantity-container {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    color: #ffffff;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 80%;
+    max-width: 450px;
+    padding: 12px;
+    border: 1px solid #374151;
+    border-radius: 10px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 1em;
+    background-color: #1e293b; /* نفس لون الخلفية */
+    color: #e2e8f0;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/* الأزرار */
+button {
+    padding: 12px 24px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+}
+
+button:hover {
+    background-color: #2563eb;
+    transform: scale(1.05);
+}
+
+button i {
+    margin-right: 8px;
+}
+
+/* قائمة العناصر */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 12px;
+    justify-content: center;
+}
+
+li {
+    background-color: #374151; /* لون خلفية العناصر */
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1.2em;
+    color: #e2e8f0;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+li:hover {
+    background-color: #4b5563; /* لون تفاعل */
+    transform: scale(1.02);
+}
+
+li .delete-btn {
+    background-color: #ef4444; /* لون أحمر جميل */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+}
+
+li .delete-btn:hover {
+    background-color: #dc2626;
+}
+
+/* الوضع المظلم */
+body.dark-mode {
+    background-color: #1a202c;
+    color: #e2e8f0;
+}
+
+header.dark-mode {
+    background: linear-gradient(135deg, #4a5568, #2d3748);
+}
+
+.container.dark-mode {
+    background-color: #2d3748;
+}
+
+h2.dark-mode {
+    color: #e2e8f0;
+}
+
+input[type="text"],
+input[type="number"] {
+    background-color: #4a5568;
+    color: #e2e8f0;
+    border: 1px solid #4a5568;
+}
+
+button {
+    background-color: #4a5568;
+}
+
+button:hover {
+    background-color: #2d3748;
+}
+
+li {
+    background-color: #4a5568;
+}
+
+li .delete-btn {
+    background-color: #e53e3e;
+}
+
+li .delete-btn:hover {
+    background-color: #c53030;
+}
+
+/* استعلامات الوسائط */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+    
+    header button {
+        font-size: 1.2em;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header button {
+        font-size: 1.1em;
+    }
+
+    .container {
+        padding: 20px;
+        margin-top: 80px;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        width: 100%;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    li {
+        font-size: 1.1em;
+        padding: 12px;
+    }
+
+    li .delete-btn {
+        padding: 6px 10px;
+        font-size: 0.9em;
+    }
+}
